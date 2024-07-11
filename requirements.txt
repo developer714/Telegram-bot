@@ -1,0 +1,5 @@
+telegram
+python-telegram-bot
+mysql-connector-python
+setuptools
+ton

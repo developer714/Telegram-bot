@@ -1,0 +1,18 @@
+global int constant MIN_VALUE = 100000000; // 0.1 TON in nanoton
+
+() recv_internal() impure {
+  ;; Check incoming value
+  slice in_msg = get_internal_msg();
+  int value = in_msg~load_coins();
+
+  if (value < MIN_VALUE) {
+    ;; If less than 0.1 TON, reject the transaction
+    throw(1);
+  }
+
+  ;; Save the incoming value to data storage (basic example)
+  (slice source_addr) = in_msg~load_msg_addr();
+  int balance = get_data().~load_coins(); 
+  balance += value;
+  set_data(global_balance ~ balance ~ source_addr);
+ }

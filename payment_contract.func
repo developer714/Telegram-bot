@@ -1,0 +1,18 @@
+// Simple Smart Contract to accept payments in FunC
+
+// Function to accept the payment
+int accept_message(slice in_msg, int in_msg_value) {
+    ;; Accept the payment
+    accept();
+    return 0;
+}
+
+// Handle internal messages (payments)
+() recv_internal(int msg_value, cell in_msg, slice in_msg_body) {
+    accept_message(in_msg_body, msg_value);
+}
+
+// Handle external messages (ignored to avoid bounce issues)
+() recv_external(slice in_msg_body) {
+    throw(1);
+}

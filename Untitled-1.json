@@ -1,0 +1,3 @@
+TON_API_URL = 'https://toncenter.com/api/v2/'
+API_KEY = 'e122761e97f07d98c83e1a323dc1660f6b31b949292d7a3200510e90441d6cd4'  # You need to get an API key from toncenter.com
+WALLET_ADDRESS = 'UQBU61PW1hoLoJ4-yJkMRtrTsZD7vhfyfe25jDtDyaXEPpwz'
